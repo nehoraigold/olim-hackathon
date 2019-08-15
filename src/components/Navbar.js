@@ -24,34 +24,32 @@ class Navbar extends React.Component {
         mode="horizontal"
         
       >
-        <Menu.Item key="mail" style={{float:'left'}}>
-          <Icon type="mail" />
-          Logo
+        <Menu.Item class="menu-item logo" key="mail" style={{float:'left'}}>
+          <div class="logo app-title" style={{fontFamily: 'Courgette, cursive', fontSize:'20px'}}>
+            hamerkazia
+          </div>
         </Menu.Item>
 
-        <Menu.Item key="app">
-          <Icon type="appstore" />
+        <Menu.Item key="benefits">
+          <Icon type="star" />
           Benefits
         </Menu.Item>
-        <Menu.Item key="app">
+        <Menu.Item key="services">
           <Icon type="appstore" />
           Services
         </Menu.Item>
-        <Menu.Item key="app">
-          <Icon type="appstore" />
+        <Menu.Item key="journey">
+          <Icon type="global" />
           My Journey
         </Menu.Item>
-        <Menu.Item key="app">
+        <Menu.Item key="notification">
           <Icon type="notification" />
-          Notifications
         </Menu.Item>
-        <Menu.Item key="app">
-          <Icon type="appstore" />
-          Language
+        <Menu.Item key="lang">
+          EN
         </Menu.Item>
-        <Menu.Item key="app">
-          <Icon type="appstore" />
-          Profile
+        <Menu.Item key="user-profile">
+          <Icon type="user" />
         </Menu.Item>
       </Menu>
     );
