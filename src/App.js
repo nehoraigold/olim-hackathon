@@ -9,9 +9,10 @@ function App() {
 	return (
 		<Router>
 			<div className="App">
+				{/*<Navbar/>*/}
 				<Switch>
-					<Route path="/" component={LandingPage}/>
-					{/* <Route path="/driving" component={DrivingPage}/> */}
+					{/* <Route path="/" component={LandingPage}/> */}
+					<Route path="/" component={DrivingPage}/>
 				</Switch>
 			</div>
 		</Router>
