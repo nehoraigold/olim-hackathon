@@ -1,5 +1,5 @@
 import React from "react";
-import { Checkbox, Descriptions, Icon, List } from "antd";
+import { Descriptions, Icon, List } from "antd";
 
 const LicenseTransferSubsection = props => {
 	const data = [

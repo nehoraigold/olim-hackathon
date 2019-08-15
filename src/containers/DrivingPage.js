@@ -7,8 +7,6 @@ import LicenseTransferSubsection from "../components/LicenseTransferSubsection";
 import BuyingCarSubsection from "../components/BuyingCarSubsection";
 import { PageHeader, Tabs } from "antd";
 import Icon from "antd/es/icon";
-import Navbar from "../components/Navbar";
-
 const { TabPane } = Tabs;
 //endregion
 
