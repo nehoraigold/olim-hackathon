@@ -1,3 +1,7 @@
+import {USERS} from "./mockdata/users";
+import {BENEFITS} from "./mockdata/benefits"
+import {CONTENT} from "./mockdata/content"
+
 const TABLE_USERS = "users";
 const TABLE_BENEFITS = "benefits";
 const TABLE_CONTENT = "content";
@@ -14,15 +18,15 @@ export default function init() {
 }
 
 function populateLocalStorage() {
-    let tables = [TABLE_BENEFITS, TABLE_CONTENT, TABLE_USERS];
-
-    for (const table of tables) {
-        fetchJSONFile("./src/database/mockdata/" + table + ".json", function (data) {
-            writeAll(table, data);
-        });
-    }
+    writeAll(TABLE_USERS, USERS);
+    writeAll(TABLE_BENEFITS, BENEFITS);
+    writeAll(TABLE_CONTENT, CONTENT);
 
     print("local storage populated");
+}
+
+export function getUserProfile() {
+    return getObject(TABLE_USERS, "0");
 }
 
 function getContentForCategory(userId, category) {
@@ -47,6 +51,7 @@ function getAll(table, func = getAllFromLocalStorage) {
 }
 
 function writeAll(table, object) {
+    console.log("setting for table " + table + ": " + JSON.stringify(object));
     window.localStorage.setItem(table, JSON.stringify(object));
 }
 
@@ -64,21 +69,6 @@ function nodePrint(message) {
 function browserPrint(message) {
     console.log(message);
     console.log("\n");
-}
-
-function fetchJSONFile(path, callback) {
-    var httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = function () {
-        if (httpRequest.readyState === 4) {
-            if (httpRequest.status === 200) {
-                print("response from " + path + " == " + httpRequest.responseText);
-                var data = JSON.parse(httpRequest.responseText);
-                if (callback) callback(data);
-            }
-        }
-    };
-    httpRequest.open('GET', path);
-    httpRequest.send();
 }
 
 const getAllFromJsonFileNOT_IN_BROWSER = (table, callback) => {
