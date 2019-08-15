@@ -4,6 +4,7 @@ import DrivingPage from "./containers/DrivingPage";
 import Navbar from './components/Navbar'
 import LandingPage from './containers/LandingPage'
 import './App.css';
+import ProfilePage from "./containers/ProfilePage";
 
 function App() {
 	return (
@@ -11,6 +12,7 @@ function App() {
 			<div className="App">
 				<Navbar/>
 				<Switch>
+					<Route path={"/profile"} component={ProfilePage}/>
 					{/* <Route path="/" component={LandingPage}/> */}
 					<Route path="/" component={DrivingPage}/>
 				</Switch>
