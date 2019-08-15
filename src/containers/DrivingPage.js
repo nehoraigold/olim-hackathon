@@ -14,9 +14,6 @@ const { TabPane } = Tabs;
 
 const DrivingPage = props => {
 	return (
-		<div>
-			<Navbar/>
-		
 		<div className="page driving-page">
 			<PageHeader title={<h1>Driving Overview</h1>}/>
 			<Tabs defaultActiveKey={"1"}>
@@ -30,7 +27,6 @@ const DrivingPage = props => {
 					</BenefitsSection>
 				</TabPane>
 			</Tabs>
-		</div>
 		</div>
 	)
 };
