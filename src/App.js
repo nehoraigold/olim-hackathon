@@ -10,7 +10,7 @@ function App() {
 	return (
 		<Router>
 			<div className="App">
-				{/*<Navbar/>*/}
+				<Navbar/>
 				<Switch>
 					{/* <Route path="/" component={LandingPage}/> */}
 					<Route path="/" component={DrivingPage}/>

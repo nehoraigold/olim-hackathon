@@ -2,11 +2,24 @@ import React from "react";
 import { PageHeader } from "antd";
 
 const DrivingInfoSection = props => {
+	const yearsSinceAliyah = 2;
+	const eligibiltyStatus = "oleh";
+
 	return (
 		<div className="section driving-info-section">
 			<PageHeader title={<h3>Driving Information</h3>}/>
 			<div>
-				<p className="">Lorem ipsum and shit...</p>
+				<h4>Transferring Your Foreign Driver's License</h4>
+				<p>
+					You have {5 - yearsSinceAliyah} years to transfer your foreign license into an Israeli one.
+
+				</p>
+				<h4>Buying or Importing a Car</h4>
+				<p>
+					As an {eligibiltyStatus}, you have {`${3 - yearsSinceAliyah} ${3 - yearsSinceAliyah > 1 ? "years" : "year"} `}
+					left to take advantage of purchasing a new car in Israel or importing one
+					from abroad. Olim receive a ___ tax break...
+				</p>
 			</div>
 		</div>
 	)
