@@ -8,6 +8,7 @@ import BuyingCarSubsection from "../components/BuyingCarSubsection";
 import { PageHeader, Tabs } from "antd";
 import Icon from "antd/es/icon";
 import Navbar from "../components/Navbar";
+import CategoryIcon from "../components/CategoryIcon";
 
 const { TabPane } = Tabs;
 //endregion
