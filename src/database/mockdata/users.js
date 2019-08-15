@@ -1,4 +1,4 @@
-{
+export const USERS = {
   "0": {
     "id": 0,
     "name_first": "ezra",
@@ -27,4 +27,4 @@
       }
     ]
   }
-}
+};
