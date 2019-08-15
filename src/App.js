@@ -4,7 +4,7 @@ import DrivingPage from "./containers/DrivingPage";
 import Navbar from './components/Navbar'
 import LandingPage from './containers/LandingPage'
 import './App.css';
-import CategoriesPage from './containers/CategoriesPage';
+import Categories from './containers/Categories';
 
 function App() {
 	return (
@@ -14,7 +14,7 @@ function App() {
 				<Switch>
 					{/* <Route path="/" component={LandingPage}/> */}
 					<Route path="/" component={DrivingPage}/>
-					{/* <Route path="/" component={CategoriesPage}/> */}
+					{/* <Route path="/" component={Categories}/> */}
 				</Switch>
 			</div>
 		</Router>

@@ -2,7 +2,7 @@ import React from "react";
 import { Icon} from "antd";
 
 
-const CategoryIcon = props => {
+const CategoryBox = props => {
 	return (
 		<div className="category-icons" style={{textAlign:'center'}}>
 			<Icon type= {props.iconName}
@@ -18,4 +18,4 @@ const CategoryIcon = props => {
 	)
 };
 
-export default CategoryIcon;
+export default CategoryBox;
