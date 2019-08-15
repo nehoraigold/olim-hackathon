@@ -1,7 +1,11 @@
-import * as Controller from "../database/controller";
+import init, { getUserProfile } from "../database/controller";
 
-const initialState = {};
+init();
+const initialState = getUserProfile();
 
 export const mainReducer = (state = initialState, action) => {
-
+	switch (action.type) {
+		default:
+			return state;
+	}
 };
