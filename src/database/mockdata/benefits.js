@@ -1,4 +1,4 @@
-{
+export const BENEFITS = {
   "0": {
     "id": 0,
     "name": "sal klita",
@@ -64,4 +64,4 @@
       }
     }
   }
-}
+};
