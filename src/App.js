@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import DrivingPage from "./containers/DrivingPage";
 import './App.css';
 
@@ -7,10 +7,10 @@ function App() {
 	return (
 		<Router>
 			<div className="App">
-				<Navbar/>
+				{/*<Navbar/>*/}
 				<Switch>
-					<Route path="/" component={LandingPage}/>
-					<Route path="/driving" component={DrivingPage}/>
+					{/*<Route path="/" component={LandingPage}/>*/}
+					<Route path="/" component={DrivingPage}/>
 				</Switch>
 			</div>
 		</Router>
