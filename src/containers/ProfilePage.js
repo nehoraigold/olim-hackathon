@@ -4,32 +4,32 @@ import { connect } from "react-redux";
 
 const { Option } = Select;
 
-const ProfilePage = ({ state }) => {
+const ProfilePage = ({ user }) => {
 	return (
 		<div>
 			<PageHeader title={<h1>My Profile</h1>}/>
 			<Descriptions>
 				<Descriptions.Item label="Name">
-					<Input style={{textTransform: "capitalize"}} value={`${state.name_first} ${state.name_last}`}/>
+					<Input style={{textTransform: "capitalize"}} value={`${user.name_first} ${user.name_last}`}/>
 				</Descriptions.Item>
 				<Descriptions.Item label="ID Number">
-					<Input value={state.identity_number}/>
+					<Input value={user.identity_number}/>
 				</Descriptions.Item>
 				<Descriptions.Item label="Marital Status">
-					<Select defaultValue={state.marital_status}>
+					<Select defaultValue={user.marital_status}>
 						<Option value={"single"}>Single</Option>
 						<Option value={"married"}>Married</Option>
 						<Option value={"divorced"}>Divorced</Option>
 					</Select>
 				</Descriptions.Item>
 				<Descriptions.Item label="Date of Birth">
-					<Input value={state.date_of_birth}/>
+					<Input value={user.date_of_birth}/>
 				</Descriptions.Item>
 				<Descriptions.Item label="Date of Aliyah">
-					<Input value={state.date_of_arrival}/>
+					<Input value={user.date_of_arrival}/>
 				</Descriptions.Item>
 				<Descriptions.Item label="Status">
-					<Input style={{textTransform: "capitalize"}} value={state.national_status}/>
+					<Input style={{textTransform: "capitalize"}} value={user.national_status}/>
 				</Descriptions.Item>
 			</Descriptions>
 		</div>
@@ -37,7 +37,8 @@ const ProfilePage = ({ state }) => {
 };
 
 const mapStateToProps = state => {
-	return { state }
+	return {
+		user: state.user }
 };
 
 const mapDispatchToProps = dispatch => {

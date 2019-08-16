@@ -4,9 +4,14 @@ import { connect } from "react-redux";
 
 const DrivingInfoSection = ({ user, benefit }) => {
 	const startsWithVowel = text => {
-		return text.charAt(0);
+		return ['a', 'e', 'i', 'o', 'u'].some(letter => letter === text.charAt(0).toLowerCase());
 	};
 
+	const returnWordWithArticle = text => {
+		return startsWithVowel(text) ? `an ${text}` : `a ${text}`;
+	};
+
+	const yearsSinceAliyah = 2;
 	return (
 		<div className="section driving-info-section">
 			<PageHeader title={<h3>Driving Information</h3>}/>
@@ -18,7 +23,7 @@ const DrivingInfoSection = ({ user, benefit }) => {
 				</p>
 				<h4 className="driving-title information">Buying or Importing a Car</h4>
 				<p className="driving-description information">
-					As an {eligibiltyStatus}, you have {`${3 - yearsSinceAliyah} ${3 - yearsSinceAliyah > 1 ? "years" : "year"} `}
+					As {returnWordWithArticle(user.national_status)}, you have {``}
 					left to take advantage of purchasing a new car in Israel or importing one
 					from abroad. Olim receive a ___ tax break...
 				</p>
