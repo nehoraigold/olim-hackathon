@@ -14,9 +14,11 @@ export function getAllBenefits() {
 export function getRelevantBenefitsByCategory(user, category) {
     let userBenefits = getRelevantBenefits(user);
     let relevantBenefits = [];
-    for (const benefit of userBenefits) {
-        if (benefit.category === category.id) {
-            relevantBenefits.push(benefit);
+    for (const benefit in userBenefits) {
+        if (userBenefits.hasOwnProperty(benefit)) {
+            if (benefit.category === category.id) {
+                relevantBenefits.push(benefit);
+            }
         }
     }
     return relevantBenefits;

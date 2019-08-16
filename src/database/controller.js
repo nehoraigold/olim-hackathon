@@ -1,6 +1,5 @@
 import {USERS} from "./mockdata/users";
 import {BENEFITS} from "./mockdata/benefits"
-import {CONTENT} from "./mockdata/content"
 
 const TABLE_USERS = "users";
 const TABLE_BENEFITS = "benefits";
@@ -20,13 +19,8 @@ export default function init() {
 function populateLocalStorage() {
     writeAll(TABLE_USERS, USERS);
     writeAll(TABLE_BENEFITS, BENEFITS);
-    writeAll(TABLE_CONTENT, CONTENT);
 
     print("local storage populated");
-}
-
-function getContentForCategory(userId, category) {
-
 }
 
 export function getObject(table, key, funcGetAll = getAllFromLocalStorage) {
@@ -41,9 +35,9 @@ function getAllFromLocalStorage(table) {
 }
 
 export function getAll(table, func = getAllFromLocalStorage) {
-    let collection = func(table);
+    let collection = func(table) as Object;
     print(collection.toString());
-    return !collection ? null : collection;
+    return !collection ? null : Object.entries(collection);
 }
 
 export function writeAll(table, object) {
