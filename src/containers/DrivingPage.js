@@ -25,7 +25,7 @@ const DrivingPage = props => {
 						<BuyingCarSubsection/>
 					</BenefitsSection>
 				</TabPane>
-				<TabPane key={"3"} tab={<span><Icon type="car"/>Documents</span>}>
+				<TabPane key={"3"} tab={<span><Icon type="paper-clip"/>Documents</span>}>
 				   <Row>
 				   <Col span={6}> 
 				   Tofes Yarok (Eye Examination Form)
