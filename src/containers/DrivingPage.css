@@ -3,3 +3,16 @@
     width:100%;
     text-align:left;
 }
+
+.ant-tabs.ant-tabs-top.ant-tabs-line {
+    padding: 0px 30px !important;
+}
+
+[aria-selected="true"].ant-tabs-tab-active.ant-tabs-tab {
+    color: #91d7ea !important;
+    bottom-border: 1px solid #91d7ea !important;
+}
+
+.information {
+    margin: 0px 25px !important;
+}

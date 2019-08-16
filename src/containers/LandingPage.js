@@ -5,6 +5,7 @@ import {Row,Col} from 'antd'
 
 const LandingPage = props => {
 	return (
+<<<<<<< HEAD
 		<div style={{margin: '50px'}}>
             <div>text</div>
             <Row>
@@ -24,6 +25,9 @@ const LandingPage = props => {
            </Col>
     </Row>
 			
+=======
+		<div>
+>>>>>>> master
 		</div>
 	)
 };
