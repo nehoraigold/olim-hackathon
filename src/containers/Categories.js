@@ -22,18 +22,27 @@ const Categories = ({ benefits }) => {
 				</Col>
 				<Col span={6}>
 					<CategoryBox iconName="laptop" title="Education"/>
-
-					<CategoryBox iconName="global" title="Ulpan"/>
+					{benefits.some(benefit => benefit.id === "ulpan_hebrew_lessons") ?
+							<CategoryBox iconName="global" title="Ulpan"/> : null}
 				</Col>
 			</Row>
 		</div>
 	)
 };
 
+const mapStateToProps = state => {
+	return {
+		benefits: state.benefits
+	};
+};
 
+const mapDispatchToProps = dispatch => {
+	return {};
+};
 
 const CategoriesComponent = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Categories);
 
-);
-
-export default Categories;
+export default CategoriesComponent;
