@@ -24,7 +24,8 @@ function interceptAgeRestrictionBenefit(user, benefit) {
 }
 
 function interceptTimelineRestrictionBenefit(user, benefit) {
-
+    console.log("user = ", user);
+    console.log("benefit = ", benefit);
     let deadline = benefit.limitations.from_aliyah.deadline;
     if (!deadline || !TIME_UNITS[deadline.unit]) {
         return false;

@@ -4,6 +4,8 @@ import { getRelevantBenefits } from "../database/benefit_controller";
 
 init();
 
+console.log(getUserProfile());
+
 const initialState = {
 	user: getUserProfile(),
 	benefits: getRelevantBenefits(getUserProfile())

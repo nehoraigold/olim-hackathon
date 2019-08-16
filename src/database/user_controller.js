@@ -1,11 +1,11 @@
-import {getObject} from "./controller";
+import {getAll, getAllFromLocalStorage, getObject} from "./controller";
 
 const TABLE = "users";
 
 export function getUserProfile() {
-    return getUser( "0");
+    return getAllFromLocalStorage(TABLE)
 }
 
 function getUser(id) {
-    getObject(TABLE, id);
+
 }
