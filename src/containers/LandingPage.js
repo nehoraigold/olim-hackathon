@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar from "../components/Navbar"
 import CategoryBox from "../components/CategoryBox";
-import {Row,Col} from 'antd'
+import {Row,Col, Upload} from 'antd'
+
 
 const LandingPage = props => {
 	return (

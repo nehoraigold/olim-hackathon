@@ -1,5 +1,5 @@
 import React from "react";
-import {Avatar, Descriptions, Input, PageHeader, Select, Checkbox,Radio} from "antd";
+import {Avatar, Descriptions, Input, PageHeader, Select, Checkbox,Radio, Upload} from "antd";
 import { connect } from "react-redux";
 import "./Profile.css";
 
@@ -51,6 +51,7 @@ const ProfilePage = ({ user }) => {
 					<Checkbox onChange={ onChange=(e)=>e.target.checked}/>
 				</Descriptions.Item>
 			</Descriptions>
+			
 		</div>
 	);
 };

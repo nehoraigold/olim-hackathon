@@ -5,8 +5,9 @@ import BenefitsSection from "../components/BenefitsSection";
 import DrivingInfoSection from "../components/DrivingInfoSection";
 import LicenseTransferSubsection from "../components/LicenseTransferSubsection";
 import BuyingCarSubsection from "../components/BuyingCarSubsection";
-import { PageHeader, Tabs } from "antd";
+import { PageHeader, Tabs, Row, Col } from "antd";
 import Icon from "antd/es/icon";
+import UploadButton from "../components/UploadButton";
 const { TabPane } = Tabs;
 //endregion
 
@@ -23,6 +24,18 @@ const DrivingPage = props => {
 						<LicenseTransferSubsection/>
 						<BuyingCarSubsection/>
 					</BenefitsSection>
+				</TabPane>
+				<TabPane key={"3"} tab={<span><Icon type="car"/>Documents</span>}>
+				   <Row>
+				   <Col span={6}> 
+				   Tofes Yarok (Eye Examination Form)
+				   				</Col>
+				   <Col span={6}> 
+				   <UploadButton/>
+				</Col>
+				   
+				   </Row>
+					
 				</TabPane>
 			</Tabs>
 		</div>
