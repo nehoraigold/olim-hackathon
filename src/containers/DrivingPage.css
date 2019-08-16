@@ -16,3 +16,40 @@
 .information {
     margin: 0px 25px !important;
 }
+
+.driving-label.information {
+    margin: 0px 50px !important;
+}
+
+.not-utilized {
+    color: red;
+    padding-right: 5px;
+}
+
+.utilized {
+    color: #91d7ea;
+    padding-right: 5px;
+}
+
+.ant-list.ant-list-split {
+    margin: 0 50px;
+}
+
+.license-transfer.subsection, .buying-car.subsection {
+    background: #f1ffff;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0 15px;
+    -webkit-box-shadow: -9px 10px 13px 0px rgba(212,212,212,1);
+    -moz-box-shadow: -9px 10px 13px 0px rgba(212,212,212,1);
+    box-shadow: -9px 10px 13px 0px rgba(212,212,212,1);
+}
+
+.benefits-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.ant-tabs-tabpane.ant-tabs-tabpane-active {
+    height: 450px;
+}

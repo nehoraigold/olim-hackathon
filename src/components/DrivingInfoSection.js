@@ -21,6 +21,7 @@ const DrivingInfoSection = ({ user, benefit }) => {
 					You have {5 - yearsSinceAliyah} years to transfer your foreign license into an Israeli one.
 
 				</p>
+				<br/>
 				<h4 className="driving-title information">Buying or Importing a Car</h4>
 				<p className="driving-description information">
 					As {returnWordWithArticle(user.national_status)}, you have {``}

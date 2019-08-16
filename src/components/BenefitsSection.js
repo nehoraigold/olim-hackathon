@@ -5,7 +5,7 @@ const BenefitsSection = props => {
 	return (
 		<div className="section benefits-section">
 			<PageHeader title={<h3>My {props.category} Benefits</h3>}/>
-			<div>
+			<div className="benefits-container">
 				{props.children}
 			</div>
 		</div>

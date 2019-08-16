@@ -15,15 +15,19 @@ const BuyingCarSubsection = props => {
 	];
 	return (
 		<div className="buying-car subsection">
-			<h3>Buying or Importing a Car</h3>
+			<h3 className="driving-title information">Buying or Importing a Car</h3>
+			<br/>
 			<Descriptions>
-				<Descriptions.Item label={"Status"}>Not utilized</Descriptions.Item>
+				<Descriptions.Item className="driving-label information" label={"Status"}>
+					<div className="not-utilized">Not utilized </div>
+				</Descriptions.Item>
 			</Descriptions>
-			<List header={<h4>Requirements</h4>}
+			<List header={<h4 >Requirements</h4>}
 				dataSource={data}
 			    renderItem={item =>
 					<List.Item>
-						{<Icon type={item.isComplete ? "check" : "close"}/>} {item.requirement}
+						{<Icon className={item.isComplete ? "utilized" : "not-utilized"}
+							type={item.isComplete ? "check" : "close"}/>} {item.requirement}
 					</List.Item>}/>
 		</div>
 	);
