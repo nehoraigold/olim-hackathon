@@ -5,7 +5,7 @@ import { getRelevantBenefits } from "../database/benefit_controller";
 init();
 
 const initialState = {
-	user: getUserProfile(),
+	user: JSON.parse(window.localStorage.users)["0"],
 	benefits: {}
 };
 
