@@ -25,15 +25,11 @@ function populateLocalStorage() {
     print("local storage populated");
 }
 
-export function getUserProfile() {
-    return getObject(TABLE_USERS, "0");
-}
-
 function getContentForCategory(userId, category) {
 
 }
 
-function getObject(table, key, funcGetAll = getAllFromLocalStorage) {
+export function getObject(table, key, funcGetAll = getAllFromLocalStorage) {
     let collection = funcGetAll(table);
     let object = collection[key];
     return !object ? null : object;
@@ -44,18 +40,18 @@ function getAllFromLocalStorage(table) {
     return !collection ? null : collection;
 }
 
-function getAll(table, func = getAllFromLocalStorage) {
+export function getAll(table, func = getAllFromLocalStorage) {
     let collection = func(table);
     print(collection.toString());
     return !collection ? null : collection;
 }
 
-function writeAll(table, object) {
+export function writeAll(table, object) {
     console.log("setting for table " + table + ": " + JSON.stringify(object));
     window.localStorage.setItem(table, JSON.stringify(object));
 }
 
-function writeObject(table, key, object) {
+export function writeObject(table, key, object) {
     let collection = getAll(table);
     collection[key] = object;
     writeAll(table, collection);
