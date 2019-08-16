@@ -13,6 +13,7 @@ export function getAllBenefits() {
 
 export function getRelevantBenefitsByCategory(user, category) {
     let userBenefits = getRelevantBenefits(user);
+    console.log("userBenefits: " + userBenefits);
     let relevantBenefits = [];
     for (const benefit in userBenefits) {
         if (userBenefits.hasOwnProperty(benefit)) {
@@ -25,16 +26,18 @@ export function getRelevantBenefitsByCategory(user, category) {
 }
 
 export function getRelevantBenefits(user) {
-    let allBenefits = getAllBenefits();
+    const allBenefits = getAllBenefits();
+    console.log("allBenefits", allBenefits);
     let validBenefits = [];
-
-    for (let benefit in allBenefits) {
+    allBenefits.forEach(benefit => {
+        console.log("benefit: ", benefit);
         if (allBenefits.hasOwnProperty(benefit)) {
             if (isBenefitValid(user, benefit)) {
                 validBenefits.push(benefit);
             }
         }
-    }
+    });
+
     return validBenefits;
 }
 
