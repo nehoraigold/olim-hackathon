@@ -1,12 +1,16 @@
-  // if married, expect a family category appears 
-  export function changeMaritalStatus(updated_status) {
-    return { type: MARITAL_STATUS_CHANGE, updated_status }
-  }
+// if married, expect a family category appears
+export function changeMaritalStatus(updated_status) {
+	return { type: "MARITAL_STATUS_CHANGE", updated_status }
+}
+
+export function validLicenseFor5Years(bool) {
+	return { type: "HAS_VALID_FOREIGN_LICENSE", hasLicense: bool};
+}
 
 
-  export function changeAge(text) {
-    return { type: ADD_TODO, text }
-  }
+export function changeAge(text) {
+	return { type: "ADD_TODO", text }
+}
 
 /*
 1. If user has Israeli license && <3 years , SHOW Car Importing Info ONLY, WITH TAX BENEFITS
@@ -21,13 +25,13 @@
 
 
 */
-  export function toggleLicense(text) {
-    return { type: ADD_TODO, text }
-  }
+export function toggleLicense(text) {
+	return { type: "ADD_TODO", text }
+}
 
 //
-  export function changeAliyahDate(text) {
-    return { type: ADD_TODO, text }
-  }
+export function changeAliyahDate(text) {
+	return { type: "ADD_TODO", text }
+}
 
 
