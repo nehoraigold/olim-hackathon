@@ -1,7 +1,11 @@
 import React from "react";
 import { Descriptions, Icon, List } from "antd";
+import { connect } from "react-redux";
 
-const LicenseTransferSubsection = props => {
+const LicenseTransferSubsection = ({ benefits }) => {
+	if (!benefits.some(benefit => benefit.id === "transfer_foreign_license")) {
+		return null;
+	}
 	const data = [
 		{
 			requirement: "You need a valid Teudat Zehut.",
@@ -41,4 +45,18 @@ const LicenseTransferSubsection = props => {
 	)
 };
 
-export default LicenseTransferSubsection;
+const mapStateToProps = state => {
+	return {
+		user: state.user,
+		benefits: state.benefits
+	};
+};
+
+const mapDispatchToProps = dispatch => {};
+
+const LicenseTransfer = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(LicenseTransferSubsection);
+
+export default LicenseTransfer;
