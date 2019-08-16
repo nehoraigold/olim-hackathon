@@ -12,8 +12,8 @@ function App() {
 			<div className="App">
 				<Navbar/>
 				<Switch>
-					{/* <Route path="/" component={LandingPage}/> */}
-					<Route path="/" component={DrivingPage}/>
+					<Route path="/" component={LandingPage}/>
+					{/* <Route path="/" component={DrivingPage}/> */}
 					{/* <Route path="/" component={Categories}/> */}
 				</Switch>
 			</div>

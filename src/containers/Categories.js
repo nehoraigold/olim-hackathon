@@ -3,7 +3,7 @@ import CategoryBox from "../components/CategoryBox";
 import { Row, Col } from 'antd';
 
 
-const CategoriesPage = props => {
+const Categories = props => {
 	return (
 		<div>
           <Row>
@@ -31,7 +31,7 @@ const CategoriesPage = props => {
                 iconName="car"
                 title="Driving"
             /></Col>
-      <Col span={6}><CategoryBox 
+      <Col span={6}><CategoryBox
                 iconName="laptop"
                 title="Education"
             />
@@ -45,4 +45,4 @@ const CategoriesPage = props => {
 	)
 };
 
-export default CategoriesPage;
+export default Categories;
