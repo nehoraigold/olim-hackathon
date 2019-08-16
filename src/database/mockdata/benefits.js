@@ -12,6 +12,9 @@ export const VALIDATORS = {
     "transfer_foreign_license": (user) => {
         console.log("should be able to transfer: " + !user.israeli_drivers_license && user.foreign_drivers_license);
         return !user.israeli_drivers_license && user.foreign_drivers_license;
+    },
+    "ulpan_hebrew_lessons": (user) => {
+        return user.hebrew_level < 4;
     }
 };
 
@@ -88,7 +91,6 @@ export const BENEFITS = [
             }
         }
     },
-
     {
         "id": "car_purchase_exemptions",
         "name": "tax exemptions relating to cars",
@@ -109,5 +111,8 @@ export const BENEFITS = [
                 ]
             }
         }
+    },
+    {
+        "id": "ulpan_hebrew_lessons"
     }
 ];
