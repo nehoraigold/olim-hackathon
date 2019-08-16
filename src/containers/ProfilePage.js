@@ -2,11 +2,11 @@ import React from "react";
 import { Avatar, Descriptions, Input, PageHeader, Select, Checkbox, Radio } from "antd";
 import { connect } from "react-redux";
 import "./Profile.css";
-import { validLicenseFor5Years } from "../actions/actions";
+import { changeHebrewLevel, validLicenseFor5Years } from "../actions/actions";
 
 const { Option } = Select;
 
-const ProfilePage = ({ user, changeValidDriversLicense }) => {
+const ProfilePage = ({ user, changeValidDriversLicense, changeHebrewLevel }) => {
 	return (
 		<div className="profile-container">
 			<Avatar className="avatar user" size={200} src="/profilepic.jpeg"/>
@@ -38,7 +38,7 @@ const ProfilePage = ({ user, changeValidDriversLicense }) => {
 					<Checkbox defaultChecked={user.foreign_drivers_license} onChange={e => changeValidDriversLicense(e.target.checked)}/>
 				</Descriptions.Item>
 				<Descriptions.Item label="Level of Hebrew">
-					<Radio.Group name="radiogroup" defaultValue={2}>
+					<Radio.Group onChange={e => changeHebrewLevel(e.target.value)} name="radiogroup" defaultValue={user.hebrew_level}>
 						<Radio value={1}>1</Radio>
 						<Radio value={2}>2</Radio>
 						<Radio value={3}>3</Radio>
@@ -65,7 +65,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		changeValidDriversLicense: hasLicense => dispatch(validLicenseFor5Years(hasLicense))
+		changeValidDriversLicense: hasLicense => dispatch(validLicenseFor5Years(hasLicense)),
+		changeHebrewLevel: newHebrewLevel => dispatch(changeHebrewLevel(newHebrewLevel))
 	};
 };
 

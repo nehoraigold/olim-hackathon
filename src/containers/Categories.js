@@ -1,9 +1,10 @@
 import React from "react";
 import CategoryBox from "../components/CategoryBox";
 import { Row, Col } from 'antd';
+import { connect } from "react-redux";
 
 
-const Categories = props => {
+const Categories = ({ benefits }) => {
 	return (
 		<div>
 			<Row>
@@ -21,11 +22,18 @@ const Categories = props => {
 				</Col>
 				<Col span={6}>
 					<CategoryBox iconName="laptop" title="Education"/>
+
 					<CategoryBox iconName="global" title="Ulpan"/>
 				</Col>
 			</Row>
 		</div>
 	)
 };
+
+
+
+const CategoriesComponent = connect(
+
+);
 
 export default Categories;
