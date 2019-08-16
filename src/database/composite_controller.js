@@ -20,6 +20,10 @@ export function isBenefitValid(user, benefit) {
 }
 
 function interceptAgeRestrictionBenefit(user, benefit) {
+    if (!benefit.limitations) {
+        return false;
+    }
+
     let today = moment();
     let dob = moment(user.date_of_birth);
 
@@ -32,6 +36,9 @@ function interceptAgeRestrictionBenefit(user, benefit) {
 }
 
 function interceptTimelineRestrictionBenefit(user, benefit) {
+    if (!benefit.limitations) {
+        return false;
+    }
     let deadline = benefit.limitations.from_aliyah.deadline;
     if (!deadline || !TIME_UNITS[deadline.unit]) {
         return false;
@@ -50,6 +57,9 @@ function unitsToDays(unit, amount) {
 }
 
 function interceptUsedBenefit(user, benefit) {
+    if (!benefit.limitations) {
+        return false;
+    }
     if (user.benefits_claimed[benefit.id]) {
         let claimed = user.benefits_claimed[benefit.id].number_claimed;
         let allowed = benefit.limitations.duration.amount;
