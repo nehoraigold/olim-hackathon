@@ -1,5 +1,4 @@
 export const USERS = {
-  "0": {
     "id": 0,
     "name_first": "ezra",
     "name_last": "erani",
@@ -16,13 +15,12 @@ export const USERS = {
     "israeli_passport": true,
     "israeli_drivers_license": null,
     "foreign_drivers_license": {
-      "country_of_issue": "USA",
-      "date_of_issue": "23-05-2010"
+        "country_of_issue": "USA",
+        "date_of_issue": "23-05-2010"
     },
     "benefits_claimed": {
         "id": "0",
         "activated": true,
         "number_claimed": 6
-      }
-  }
+    }
 };

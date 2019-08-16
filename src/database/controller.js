@@ -29,15 +29,16 @@ export function getObject(table, key, funcGetAll = getAllFromLocalStorage) {
     return !object ? null : object;
 }
 
-function getAllFromLocalStorage(table) {
+export function getAllFromLocalStorage(table) {
     let collection = JSON.parse(window.localStorage.getItem(table));
+    print(" getting from local storage -> ", collection);
     return !collection ? null : collection;
 }
 
 export function getAll(table, func = getAllFromLocalStorage) {
     let collection = func(table);
-    print(collection.toString());
-    return !collection ? null : Object.entries(collection);
+    console.log(table, collection);
+    return !collection ? null : collection;
 }
 
 export function writeAll(table, object) {
