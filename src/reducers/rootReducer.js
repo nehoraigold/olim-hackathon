@@ -4,11 +4,9 @@ import { getRelevantBenefits } from "../database/benefit_controller";
 
 init();
 
-console.log(getUserProfile());
-
 const initialState = {
-	user: JSON.parse(window.localStorage.users)["0"],
-	benefits: {}
+	user: getUserProfile(),
+	benefits: getRelevantBenefits(getUserProfile())
 };
 
 export const mainReducer = (state = initialState, action) => {
