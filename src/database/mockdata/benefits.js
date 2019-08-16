@@ -1,4 +1,4 @@
-import {KEY_CATEGORY_DEFAULT, KEY_CATEGORY_DRIVING} from "./content";
+import {KEY_CATEGORY_DEFAULT, KEY_CATEGORY_DRIVING} from "./categories";
 
 export const KEY_SAL_KLITA = "sal_klita";
 export const KEY_TRANSFER_FOREIGN_DRIVER_LICENSE = "transfer_foreign_license";
