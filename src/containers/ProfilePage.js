@@ -49,6 +49,7 @@ const ProfilePage = ({ user, changeValidDriversLicense, changeHebrewLevel }) => 
 					<Checkbox onChange={onChange = (e) => e.target.checked}/>
 				</Descriptions.Item>
 			</Descriptions>
+			
 		</div>
 	);
 };

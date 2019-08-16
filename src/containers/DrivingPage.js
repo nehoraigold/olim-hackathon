@@ -4,7 +4,8 @@ import "./DrivingPage.css"
 import BenefitsSection from "../components/BenefitsSection";
 import DrivingInfoSection from "../components/DrivingInfoSection";
 import BuyingCarSubsection from "../components/BuyingCarSubsection";
-import { PageHeader, Tabs } from "antd";
+import { PageHeader, Tabs, Row, Col } from "antd";
+import UploadButton from '../components/UploadButton'
 import Icon from "antd/es/icon";
 import LicenseTransfer from "../components/LicenseTransferSubsection";
 const { TabPane } = Tabs;
@@ -23,6 +24,18 @@ const DrivingPage = props => {
 						<LicenseTransfer/>
 						<BuyingCarSubsection/>
 					</BenefitsSection>
+				</TabPane>
+				<TabPane key={"3"} tab={<span><Icon type="car"/>Documents</span>}>
+				   <Row>
+				   <Col span={6}> 
+				   Tofes Yarok (Eye Examination Form)
+				   				</Col>
+				   <Col span={6}> 
+				   <UploadButton/>
+				</Col>
+				   
+				   </Row>
+					
 				</TabPane>
 			</Tabs>
 		</div>
