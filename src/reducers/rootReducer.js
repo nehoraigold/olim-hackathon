@@ -6,7 +6,7 @@ init();
 
 const initialState = {
 	user: getUserProfile(),
-	benefits: getRelevantBenefits(getUserProfile())
+	benefits: {}
 };
 
 export const mainReducer = (state = initialState, action) => {
