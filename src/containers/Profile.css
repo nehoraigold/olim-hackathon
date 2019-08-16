@@ -1,6 +1,6 @@
 .ant-descriptions.user-descriptions {
     margin-left: 200px;
-    text-align: left
+    text-align: left;
 }
 
 .avatar.user {
@@ -17,4 +17,5 @@
 }
 .ant-descriptions-item-label {
      font-weight: bold;
+    padding: 15px 0;
  }
