@@ -1,9 +1,11 @@
 import React from "react";
 import { PageHeader } from "antd";
+import { connect } from "react-redux";
 
-const DrivingInfoSection = props => {
-	const yearsSinceAliyah = 2;
-	const eligibiltyStatus = "oleh";
+const DrivingInfoSection = ({ user, benefit }) => {
+	const startsWithVowel = text => {
+		return text.charAt(0);
+	};
 
 	return (
 		<div className="section driving-info-section">
@@ -25,4 +27,20 @@ const DrivingInfoSection = props => {
 	)
 };
 
-export default DrivingInfoSection;
+const mapStateToProps = state => {
+	return {
+		user: state.user,
+		benefit: {}
+	}
+};
+
+const mapDispatchToProps = dispatch => {
+	return {};
+};
+
+const DrivingInfo = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(DrivingInfoSection);
+
+export default DrivingInfo;

@@ -1,3 +1,4 @@
+//region imports
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import DrivingPage from "./containers/DrivingPage";
@@ -6,6 +7,7 @@ import LandingPage from './containers/LandingPage'
 import './App.css';
 import Profile from "./containers/ProfilePage";
 import Categories from './containers/Categories';
+//endregion
 
 function App() {
 	return (
@@ -14,7 +16,7 @@ function App() {
 				<Navbar/>
 				<Switch>
 					<Route exact path="/profile" component={Profile}/>
-					<Route exact path="/driving" component={DrivingPage}/>
+					<Route exact path="/category/driving" component={DrivingPage}/>
 					<Route exact path="/categories" component={Categories}/>
 					<Route exact path="/" component={LandingPage}/>
 				</Switch>

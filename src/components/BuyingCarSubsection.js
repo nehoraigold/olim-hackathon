@@ -2,7 +2,6 @@ import React from "react";
 import { Descriptions, List, Icon } from "antd";
 
 const BuyingCarSubsection = props => {
-
 	let data = [
 		{
 			isComplete: false,
