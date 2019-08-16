@@ -5,13 +5,12 @@ const BuyingCarSubsection = props => {
 	let data = [
 		{
 			isComplete: false,
-			requirement: "You do not have a valid Israeli driver's license"
+			requirement: "You need a valid Israeli driver's license"
 		},
 		{
 			isComplete: true,
-			requirement: "You have a valid foreign license that was issued at least 3 months before your Aliyah date."
+			requirement: "You need a valid foreign license that was issued at least 3 months before your Aliyah date."
 		}
-
 	];
 	return (
 		<div className="buying-car subsection">

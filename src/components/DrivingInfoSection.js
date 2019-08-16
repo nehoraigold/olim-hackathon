@@ -23,6 +23,7 @@ const DrivingInfoSection = ({user, benefits}) => {
     }
 
     const yearsLeft = 5 - years;
+    const buyingCarYearsLeft = 3 - years;
     return (
         <div className="section driving-info-section">
             <PageHeader title={<h3>Driving Information</h3>}/>
@@ -77,9 +78,10 @@ const DrivingInfoSection = ({user, benefits}) => {
                 </div> : null}
             <h4 className="driving-title information">Buying or Importing a Car</h4>
             <p className="driving-description information">
-                As {returnWordWithArticle(user.national_status)}, you have {``}
-                left to take advantage of purchasing a new car in Israel or importing one
-                from abroad. Olim receive a ___ tax break...
+                As {returnWordWithArticle(user.national_status)}, you have {`${buyingCarYearsLeft} years `}
+                left to take advantage of a lower tax rate when purchasing a new car in Israel or importing one
+                from abroad. You must hold a valid foreign driver’s license that was issued at least three months
+                prior to the date of your aliyah.
             </p>
         </div>
 
