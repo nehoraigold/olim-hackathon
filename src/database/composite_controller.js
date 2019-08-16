@@ -1,4 +1,5 @@
 import moment from "moment";
+import {VALIDATORS} from "./mockdata/benefits";
 
 require('moment');
 
@@ -8,7 +9,14 @@ const TIME_UNITS = {
 };
 
 export function isBenefitValid(user, benefit) {
-    return (!interceptUsedBenefit(user, benefit) && !interceptTimelineRestrictionBenefit(user, benefit) && !interceptAgeRestrictionBenefit(user, benefit))
+    let isValid = true;
+    let validator = VALIDATORS[benefit.id];
+    console.log(benefit.id, validator);
+    if (validator) {
+        isValid = validator(user);
+    }
+
+    return isValid && (!interceptUsedBenefit(user, benefit) && !interceptTimelineRestrictionBenefit(user, benefit) && !interceptAgeRestrictionBenefit(user, benefit))
 }
 
 function interceptAgeRestrictionBenefit(user, benefit) {
@@ -20,14 +28,10 @@ function interceptAgeRestrictionBenefit(user, benefit) {
         userAge--;
     }
 
-    let valid = (benefit.limitations.age) ? userAge > benefit.limitations.age : false;
-    console.log(benefit.name + "age disqualified: " + valid);
-    return valid;
+    return (benefit.limitations.age) ? userAge > benefit.limitations.age : false;
 }
 
 function interceptTimelineRestrictionBenefit(user, benefit) {
-    console.log("user = ", user);
-    console.log("benefit = ", benefit);
     let deadline = benefit.limitations.from_aliyah.deadline;
     if (!deadline || !TIME_UNITS[deadline.unit]) {
         return false;
