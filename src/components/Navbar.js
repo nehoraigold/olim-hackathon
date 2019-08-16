@@ -16,11 +16,11 @@ const NavbarComponent = ({ benefits }) => {
 					</div>
 				</Link>
 			</Menu.Item>
-			<Menu.Item key="benefits">
+			<Menu.Item key="benefits" className="right-menu-item">
 				<Icon type="star"/>
 				Benefits
 			</Menu.Item>
-			<Menu.SubMenu key="services" title={
+			<Menu.SubMenu key="services" className="right-menu-item" title={
 				<Link to={"/categories"}>
 					<Icon type="appstore"/>
 					Services
@@ -37,17 +37,17 @@ const NavbarComponent = ({ benefits }) => {
 				{benefits.some(benefit => benefit.id === "ulpan_hebrew_lessons") ?
 					<Menu.Item key={"Ulpan"}>Ulpan</Menu.Item> : null}
 			</Menu.SubMenu>
-			<Menu.Item key="journey">
+			<Menu.Item key="journey" className="right-menu-item">
 				<Icon type="global"/>
 				My Journey
 			</Menu.Item>
-			<Menu.Item key="notification">
+			<Menu.Item key="notification" className="right-menu-item">
 				<Icon type="notification"/>
 			</Menu.Item>
-			<Menu.Item key="lang">
+			<Menu.Item key="lang" className="right-menu-item">
 				EN
 			</Menu.Item>
-			<Menu.Item key="user-profile">
+			<Menu.Item key="user-profile" className="right-menu-item">
 				<Link to={"/profile"}>
 					<Icon type="user"/>
 				</Link>
