@@ -26,9 +26,11 @@ export function getRelevantBenefits(user) {
     let allBenefits = getAllBenefits();
     let validBenefits = [];
 
-    for (const benefit of allBenefits) {
-        if (isBenefitValid(user, benefit)) {
-            validBenefits.push(benefit);
+    for (let benefit in allBenefits) {
+        if (allBenefits.hasOwnProperty(benefit)) {
+            if (isBenefitValid(user, benefit)) {
+                validBenefits.push(benefit);
+            }
         }
     }
     return validBenefits;
