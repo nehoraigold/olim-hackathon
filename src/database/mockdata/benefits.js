@@ -1,9 +1,16 @@
+import {KEY_CATEGORY_DEFAULT, KEY_CATEGORY_DRIVING} from "./categories";
+
+export const KEY_SAL_KLITA = "sal_klita";
+export const KEY_TRANSFER_FOREIGN_DRIVER_LICENSE = "transfer_foreign_license";
+export const KEY_FOREIGN_DRIVER_LICENSE_VALID = "foreign_license_valid";
+export const KEY_EXEMPTION_BUYING_OR_IMPORTING_CAR = "car_purchase_exemptions";
+
 export const BENEFITS = {
-  "0": {
-    "id": 0,
-    "name": "sal klita",
+  "sal_klita" : {
+    "id": "sal_klita",
+    "name": "sal klita monthly stipend",
     "requires_activation": true,
-    "category": "default",
+    "category": KEY_CATEGORY_DEFAULT,
     "description": "lorem ipsum",
     "limitations": {
       "age": null,
@@ -25,11 +32,11 @@ export const BENEFITS = {
       "number": 6
     }
   },
-  "1": {
-    "id": 1,
-    "name": "foreign license transfer",
+  "transfer_foreign_license": {
+    "id": "transfer_foreign_license",
+    "name": "transfer foreign driver's license to an Israeli license",
     "requires_activation": true,
-    "category": "driving",
+    "category": KEY_CATEGORY_DRIVING,
     "description": "lorem ipsum",
     "limitations": {
       "age": null,
@@ -46,11 +53,11 @@ export const BENEFITS = {
       }
     }
   },
-  "2": {
-    "id": 2,
-    "name": "foreign_license_valid",
+  "foreign_license_valid": {
+    "id": "foreign_license_valid",
+    "name": "foreign driver's license valid",
     "requires_activation": false,
-    "category": "driving",
+    "category": KEY_CATEGORY_DRIVING,
     "description": "lorem ipsum",
     "limitations": {
       "age": null,
@@ -61,6 +68,25 @@ export const BENEFITS = {
         },
         "duration": null,
         "other": []
+      }
+    }
+  },
+
+  "car_purchase_exemptions" : {
+    "id": "car_purchase_exemptions",
+    "name": "tax exemptions relating to cars",
+    "requires_activation": true,
+    "category": KEY_CATEGORY_DRIVING,
+    "description": "lorem ipsum",
+    "limitations": {
+      "age": null,
+      "from_aliyah": {
+        "deadline": {
+          "amount": 3,
+          "unit": "year"
+        },
+        "duration": null,
+        "other": ["must have valid international & israeli licenses"]
       }
     }
   }

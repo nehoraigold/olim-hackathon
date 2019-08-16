@@ -17,7 +17,7 @@ const Categories = props => {
 				</Col>
 				<Col span={6}>
 					<CategoryBox iconName="medicine-box" title="Health"/>
-					<CategoryBox iconName="car" title="Driving"/>
+					<CategoryBox iconName="car" title="Driving" endpoint="/category/driving"/>
 				</Col>
 				<Col span={6}>
 					<CategoryBox iconName="laptop" title="Education"/>
