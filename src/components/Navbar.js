@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Menu, Icon } from "antd";
 import "antd/dist/antd.css";
@@ -18,42 +19,40 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <Menu
-        onClick={this.handleClick}
-        selectedKeys={[this.state.current]}
-        mode="horizontal"
-        
-      >
-        <Menu.Item key="mail" style={{float:'left'}}>
-          <Icon type="mail" />
-          Logo
-        </Menu.Item>
+        <Menu
+            onClick={this.handleClick}
+            selectedKeys={[this.state.current]}
+            mode="horizontal"
 
-        <Menu.Item key="app">
-          <Icon type="appstore" />
-          Benefits
-        </Menu.Item>
-        <Menu.Item key="app">
-          <Icon type="appstore" />
-          Services
-        </Menu.Item>
-        <Menu.Item key="app">
-          <Icon type="appstore" />
-          My Journey
-        </Menu.Item>
-        <Menu.Item key="app">
-          <Icon type="notification" />
-          Notifications
-        </Menu.Item>
-        <Menu.Item key="app">
-          <Icon type="appstore" />
-          Language
-        </Menu.Item>
-        <Menu.Item key="app">
-          <Icon type="appstore" />
-          Profile
-        </Menu.Item>
-      </Menu>
+        >
+          <Menu.Item class="menu-item logo" key="mail" style={{float:'left'}}>
+            <div class="logo app-title" style={{fontFamily: 'Courgette, cursive', fontSize:'20px'}}>
+              hamerkazia
+            </div>
+          </Menu.Item>
+
+          <Menu.Item key="benefits">
+            <Icon type="star" />
+            Benefits
+          </Menu.Item>
+          <Menu.Item key="services">
+            <Icon type="appstore" />
+            Services
+          </Menu.Item>
+          <Menu.Item key="journey">
+            <Icon type="global" />
+            My Journey
+          </Menu.Item>
+          <Menu.Item key="notification">
+            <Icon type="notification" />
+          </Menu.Item>
+          <Menu.Item key="lang">
+            EN
+          </Menu.Item>
+          <Menu.Item key="user-profile">
+            <Icon type="user" />
+          </Menu.Item>
+        </Menu>
     );
   }
 }
