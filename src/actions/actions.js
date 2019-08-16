@@ -1,4 +1,4 @@
-  // if married, expect a family category tro appear and populate
+  // if married, expect a family category appears 
   export function changeMaritalStatus(updated_status) {
     return { type: MARITAL_STATUS_CHANGE, updated_status }
   }
