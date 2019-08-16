@@ -13,8 +13,9 @@ export const USERS = {
     "country_of_origin": "USA",
     "mother_tongue": "en",
     "israeli_passport": true,
-    "israeli_drivers_license": false,
-    "foreign_drivers_license": false,
+    "israeli_drivers_license": null,
+    "foreign_drivers_license": true,
+    "hebrew_level": 2,
     "benefits_claimed": {
         "id": "0",
         "activated": true,
