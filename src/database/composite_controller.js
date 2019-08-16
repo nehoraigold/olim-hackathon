@@ -15,12 +15,14 @@ function interceptAgeRestrictionBenefit(user, benefit) {
     let today = moment();
     let dob = moment(user.date_of_birth);
 
-    let userAge = today.getFullYear() - dob.getFullYear();
+    let userAge = today.year() - dob.year();
     if (today.dayOfYear() < dob.dayOfYear()) {
         userAge--;
     }
 
-    return (benefit.limitations.age) ? userAge > benefit.limitations.age : false;
+    let valid = (benefit.limitations.age) ? userAge > benefit.limitations.age : false;
+    console.log(benefit.name + "age disqualified: " + valid);
+    return valid;
 }
 
 function interceptTimelineRestrictionBenefit(user, benefit) {
@@ -52,16 +54,4 @@ function interceptUsedBenefit(user, benefit) {
     } else {
         return false;
     }
-}
-
-export function isContentRelevant(user, content) {
-    return !interceptAgeRestrictionContent(user, content) && !interceptTimelineRestrictionContent(user, content)
-}
-
-function interceptAgeRestrictionContent(user, content) {
-
-}
-
-function interceptTimelineRestrictionContent(user, content) {
-
 }

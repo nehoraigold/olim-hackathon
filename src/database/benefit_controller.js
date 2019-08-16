@@ -31,10 +31,11 @@ export function getRelevantBenefits(user) {
     let validBenefits = [];
     allBenefits.forEach(benefit => {
         console.log("benefit: ", benefit);
-        if (allBenefits.hasOwnProperty(benefit)) {
-            if (isBenefitValid(user, benefit)) {
-                validBenefits.push(benefit);
-            }
+        if (isBenefitValid(user, benefit)) {
+            console.log(benefit.name, "valid");
+            validBenefits.push(benefit);
+        } else {
+            console.log(benefit.name, "not valid");
         }
     });
 
