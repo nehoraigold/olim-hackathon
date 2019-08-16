@@ -5,7 +5,7 @@ const BuyingCarSubsection = props => {
 	let data = [
 		{
 			isComplete: false,
-			requirement: "You have a valid Israeli driver's license"
+			requirement: "You do not have a valid Israeli driver's license"
 		},
 		{
 			isComplete: true,

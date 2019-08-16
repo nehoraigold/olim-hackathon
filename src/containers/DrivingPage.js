@@ -15,10 +15,10 @@ const DrivingPage = props => {
 		<div className="page driving-page">
 			<PageHeader title={<h1>Driving Overview</h1>}/>
 			<Tabs defaultActiveKey={"1"}>
-				<TabPane key={"1"} tab={<span><Icon type="car"/>Information</span>}>
+				<TabPane key={"1"} tab={<span><Icon type="info-circle"/>Information</span>}>
 					<DrivingInfoSection/>
 				</TabPane>
-				<TabPane key={"2"} tab={<span><Icon type="car"/>My Benefits</span>}>
+				<TabPane key={"2"} tab={<span><Icon type="star"/>My Benefits</span>}>
 					<BenefitsSection category="Driving">
 						<LicenseTransfer/>
 						<BuyingCarSubsection/>
