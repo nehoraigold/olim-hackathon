@@ -13,7 +13,6 @@ export function getAllBenefits() {
 
 export function getRelevantBenefitsByCategory(user, category) {
     let userBenefits = getRelevantBenefits(user);
-    console.log("userBenefits: " + userBenefits);
     let relevantBenefits = [];
     for (const benefit in userBenefits) {
         if (userBenefits.hasOwnProperty(benefit)) {
@@ -27,10 +26,8 @@ export function getRelevantBenefitsByCategory(user, category) {
 
 export function getRelevantBenefits(user) {
     const allBenefits = getAllBenefits();
-    console.log("allBenefits", allBenefits);
     let validBenefits = [];
     allBenefits.forEach(benefit => {
-        console.log("benefit: ", benefit);
         if (isBenefitValid(user, benefit)) {
             console.log(benefit.name, "valid");
             validBenefits.push(benefit);
