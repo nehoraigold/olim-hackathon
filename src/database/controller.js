@@ -35,7 +35,7 @@ function getAllFromLocalStorage(table) {
 }
 
 export function getAll(table, func = getAllFromLocalStorage) {
-    let collection = func(table) as Object;
+    let collection = func(table);
     print(collection.toString());
     return !collection ? null : Object.entries(collection);
 }
