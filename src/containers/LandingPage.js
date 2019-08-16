@@ -1,29 +1,37 @@
 import React from "react";
 import Navbar from "../components/Navbar"
 import CategoryBox from "../components/CategoryBox";
-import {Row,Col, Upload} from 'antd'
-
+import {Row,Col} from 'antd'
+import "./LandingPage.css";
 
 const LandingPage = props => {
 	return (
 		<div style={{margin: '50px'}}>
-            <div>text</div>
             <Row>
-      <Col span={8} ><CategoryBox 
-                iconName="container"
+                <Col span={24}>
+                    <div className="welcome-text">Welcome Back, Ezra!</div>
+                </Col>
+            </Row>
+            <Row>
+      <Col span={8} ><CategoryBox
+                iconName="star"
                 title="My Benefits"
             /></Col>
-      <Col span={8}><CategoryBox 
-                iconName="home"
+      <Col span={8}><CategoryBox
+                iconName="fork"
                 title="My Process"
             />
            </Col>
       <Col span={8}><CategoryBox 
-                iconName="medicine-box"
+                iconName="file-search"
                 title="My Documents"
             />
            </Col>
     </Row>
+            <br/>
+            <br/>
+            <br/>
+            <div>Has anything changed? Update your profile to see your current Aliyah journey.</div>
 			
 		</div>
 	)

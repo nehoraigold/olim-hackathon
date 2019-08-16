@@ -1,4 +1,5 @@
 import moment from "moment";
+import {VALIDATORS} from "./mockdata/benefits";
 
 require('moment');
 
@@ -8,14 +9,25 @@ const TIME_UNITS = {
 };
 
 export function isBenefitValid(user, benefit) {
-    return (!interceptUsedBenefit(user, benefit) && !interceptTimelineRestrictionBenefit(user, benefit) && !interceptAgeRestrictionBenefit(user, benefit))
+    let isValid = true;
+    let validator = VALIDATORS[benefit.id];
+    console.log(benefit.id, validator);
+    if (validator) {
+        isValid = validator(user);
+    }
+
+    return isValid && (!interceptUsedBenefit(user, benefit) && !interceptTimelineRestrictionBenefit(user, benefit) && !interceptAgeRestrictionBenefit(user, benefit))
 }
 
 function interceptAgeRestrictionBenefit(user, benefit) {
+    if (!benefit.limitations) {
+        return false;
+    }
+
     let today = moment();
     let dob = moment(user.date_of_birth);
 
-    let userAge = today.getFullYear() - dob.getFullYear();
+    let userAge = today.year() - dob.year();
     if (today.dayOfYear() < dob.dayOfYear()) {
         userAge--;
     }
@@ -24,8 +36,9 @@ function interceptAgeRestrictionBenefit(user, benefit) {
 }
 
 function interceptTimelineRestrictionBenefit(user, benefit) {
-    console.log("user = ", user);
-    console.log("benefit = ", benefit);
+    if (!benefit.limitations) {
+        return false;
+    }
     let deadline = benefit.limitations.from_aliyah.deadline;
     if (!deadline || !TIME_UNITS[deadline.unit]) {
         return false;
@@ -44,6 +57,9 @@ function unitsToDays(unit, amount) {
 }
 
 function interceptUsedBenefit(user, benefit) {
+    if (!benefit.limitations) {
+        return false;
+    }
     if (user.benefits_claimed[benefit.id]) {
         let claimed = user.benefits_claimed[benefit.id].number_claimed;
         let allowed = benefit.limitations.duration.amount;
@@ -52,16 +68,4 @@ function interceptUsedBenefit(user, benefit) {
     } else {
         return false;
     }
-}
-
-export function isContentRelevant(user, content) {
-    return !interceptAgeRestrictionContent(user, content) && !interceptTimelineRestrictionContent(user, content)
-}
-
-function interceptAgeRestrictionContent(user, content) {
-
-}
-
-function interceptTimelineRestrictionContent(user, content) {
-
 }

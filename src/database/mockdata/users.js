@@ -14,10 +14,8 @@ export const USERS = {
     "mother_tongue": "en",
     "israeli_passport": true,
     "israeli_drivers_license": null,
-    "foreign_drivers_license": {
-        "country_of_issue": "USA",
-        "date_of_issue": "23-05-2010"
-    },
+    "foreign_drivers_license": true,
+    "hebrew_level": 2,
     "benefits_claimed": {
         "id": "0",
         "activated": true,
