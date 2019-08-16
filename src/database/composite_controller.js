@@ -15,7 +15,7 @@ function interceptAgeRestrictionBenefit(user, benefit) {
     let today = moment();
     let dob = moment(user.date_of_birth);
 
-    var userAge = today.getFullYear() - dob.getFullYear();
+    let userAge = today.getFullYear() - dob.getFullYear();
     if (today.dayOfYear() < dob.dayOfYear()) {
         userAge--;
     }
